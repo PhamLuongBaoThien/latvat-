@@ -80,19 +80,19 @@ create table DIEM (
    constraint FK3_DIEM FOREIGN  key  (MAMH) REFERENCES MONHOC(MAMH)
 );
 
+begin
+INSERT INTO KHOAHOC VALUES('K001','KhÃ³a 1','2020-01-10','2020-03-20');
+INSERT INTO KHOAHOC VALUES('K002','KhÃ³a 2','2020-02-28','2020-05-28');
+INSERT INTO KHOAHOC VALUES('K003','KhÃ³a 3','2020-04-10','2020-07-20');
+INSERT INTO KHOAHOC VALUES('K004','KhÃ³a 4','2020-06-15','2020-09-20');
 
-INSERT INTO KHOAHOC VALUES('K001','Khóa 1','2020-01-10','2020-03-20');
-INSERT INTO KHOAHOC VALUES('K002','Khóa 2','2020-02-28','2020-05-28');
-INSERT INTO KHOAHOC VALUES('K003','Khóa 3','2020-04-10','2020-07-20');
-INSERT INTO KHOAHOC VALUES('K004','Khóa 4','2020-06-15','2020-09-20');
 
-
-INSERT INTO CHUONGTRINH VALUES('CT001','Ti?ng Anh T?ng Quát');
+INSERT INTO CHUONGTRINH VALUES('CT001','Ti?ng Anh T?ng QuÃ¡t');
 INSERT INTO CHUONGTRINH VALUES('CT002','Ti?ng Anh Tr? Em');
 INSERT INTO CHUONGTRINH VALUES('CT003','Ti?ng Anh Luy?n K? Nang');
-INSERT INTO CHUONGTRINH VALUES('CT004','Chuong Trình TOEIC');
+INSERT INTO CHUONGTRINH VALUES('CT004','Chuong TrÃ¬nh TOEIC');
 INSERT INTO CHUONGTRINH VALUES('CT005','Ti?ng Anh IELTS');
-INSERT INTO CHUONGTRINH VALUES('CT006','Chuong Trình CamBridge');
+INSERT INTO CHUONGTRINH VALUES('CT006','Chuong TrÃ¬nh CamBridge');
 INSERT INTO CHUONGTRINH VALUES('CT007','Ch?ng Ch? Ti?ng Anh 6 B?c(A1,B1,B2,C1)');
 
 
@@ -104,14 +104,14 @@ INSERT INTO LOAILOP VALUES('LL004','CT001','Ti?ng Anh B1');
 INSERT INTO LOAILOP VALUES('LL005','CT001','Ti?ng Anh B2');
 INSERT INTO LOAILOP VALUES('LL006','CT001','Ti?ng Anh C1');
 INSERT INTO LOAILOP VALUES('LL007','CT001','Ti?ng Anh C2');
-INSERT INTO LOAILOP VALUES('LL008','CT001','Ti?ng Anh nâng cao');
+INSERT INTO LOAILOP VALUES('LL008','CT001','Ti?ng Anh nÃ¢ng cao');
 --
 INSERT INTO LOAILOP VALUES('LL009','CT002','Anh van nhi d?ng');
 INSERT INTO LOAILOP VALUES('LL010','CT002','Anh van thi?u nhi');
-INSERT INTO LOAILOP VALUES('LL011','CT002','Anh van thi?u niên');
-INSERT INTO LOAILOP VALUES('LL012','CT002','Ti?ng Anh t?ng quát dành cho thi?u niên(B1)');
-INSERT INTO LOAILOP VALUES('LL013','CT002','Ti?ng Anh t?ng quát dành cho thi?u niên(B1+)');
-INSERT INTO LOAILOP VALUES('LL014','CT002','Ti?ng Anh nâng cao');
+INSERT INTO LOAILOP VALUES('LL011','CT002','Anh van thi?u niÃªn');
+INSERT INTO LOAILOP VALUES('LL012','CT002','Ti?ng Anh t?ng quÃ¡t dÃ nh cho thi?u niÃªn(B1)');
+INSERT INTO LOAILOP VALUES('LL013','CT002','Ti?ng Anh t?ng quÃ¡t dÃ nh cho thi?u niÃªn(B1+)');
+INSERT INTO LOAILOP VALUES('LL014','CT002','Ti?ng Anh nÃ¢ng cao');
 INSERT INTO LOAILOP VALUES('LL015','CT002','IELTS');
 --
 
@@ -123,128 +123,128 @@ INSERT INTO LOP VALUES ('L003','LL002','L?p 1','25','K001');
 
 
 
-INSERT INTO HOCVIEN VALUES('HV0001','Ð? Bình An',1,'2000-11-02','0917217036','C? Ð? - C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0002','Ð? Gia B?o',1,'2001-12-02','0917217036','Ôn Môn- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0003','Ð? Phúc Vinh',1,'2002-11-02','0917217036','Cù Lao Dung - Sóc Trang');
-INSERT INTO HOCVIEN VALUES('HV0004','Th?ch Chí Tâm',1,'2000-01-02','0917217036','Châu Thành- An Giang');
+INSERT INTO HOCVIEN VALUES('HV0001','Ã? BÃ¬nh An',1,'2000-11-02','0917217036','C? Ã? - C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0002','Ã? Gia B?o',1,'2001-12-02','0917217036','Ã”n MÃ´n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0003','Ã? PhÃºc Vinh',1,'2002-11-02','0917217036','CÃ¹ Lao Dung - SÃ³c Trang');
+INSERT INTO HOCVIEN VALUES('HV0004','Th?ch ChÃ­ TÃ¢m',1,'2000-01-02','0917217036','ChÃ¢u ThÃ nh- An Giang');
 
 
-INSERT INTO HOCVIEN VALUES('HV0005','Lê C?m Giao','0',to_date('2000-11-05','yyyy-mm-dd'),'0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0006','Hu?nh Gia B?o','1',to_date('2000-11-02','yyyy-mm-dd'),'0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0007','Ð? An Nhiên','0',to_date('2001-01-02','yyyy-mm-dd'),'0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0008','Tr?n Hoàng Uyên Anh',0,'2002-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0009','Tr?n Thành',1,'1998-07-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0010','Tr?nh Giai Nhân',1,'2000-11-02','0917217036','Châu Thành- An Giang');
-INSERT INTO HOCVIEN VALUES('HV0011','Lê Thanh Hoàng',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0014','Lê Thanh Tâm',1,'2002-01-17','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0015','Hu?nh Ng?c Minh',1,'2007-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0016','Ngu Hoàng Gia B?o',1,'2005-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0017','Tr?nh Ng?c Gia B?o',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0018','Bùi B?o Ng?c',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0019','Lê Ng?c Kim Khánh',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0020','Lê Hu?nh My',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0021','Tr?n Ng?c Tuy?t',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0022','Tr?n Ng?c Khánh Minh',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0023','Tr?n Ng?c Minh Anh',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0024','Tr?n Lê Kim Ngân',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0025','Lê Thanh Trân',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0026','Lê Thanh Tâm',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0027','Tr?n Ng?c Tuy?n',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0028','Tr?n Hu?nh Gia Nhi',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0029','Tr?n Lê Kim Thoa',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0030','Bùi M?ng C?m',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0031','Tr?n M?ng Ði?p',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0032','Tr?n Kim Quyên',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0033','Tr?n Lê Anh Thu',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0034','Tr?n Thanh Nghi',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0035','Tr?n Bùi T? Nga',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0036','Tr?n Th? Kim Cúc',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0037','Tr?n B?o Thy',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0038','Nguy?n Th? B?o Nghi',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0039','Lê Thanh Ng?c',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0040','Tr?n Th? Nhu Ý',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0041','Tr?n Ng?c M? Ý',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0042','Tr?n Ng?c Phúc An',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0043','Tr?n Ng?c Minh Anh',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0044','Tr?n Ng?c Phúc An',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0047','Tr?n Ng?c Bích',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0048','Tr?n Thanh Nhân',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0049','Ð? T? Uyên',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0050','Lê Hà My',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0051','Lê Ng?c Trân',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0052','Nguy?n Minh Thi',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0053','Tr?n Ng?c Anh',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0054','Tr?n Ng?c Khánh Nhu',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0055','Tr?n Ng?c Tiên',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0056','Tr?n Ki?u Tiên',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0057','Tr?n H?u Phu?c',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0058','Tr?n Hoàng Khang',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0059','Tr?n Lâm Tru?ng',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0060','Tr?n Tr?ng Phúc',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0005','LÃª C?m Giao','0',to_date('2000-11-05','yyyy-mm-dd'),'0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0006','Hu?nh Gia B?o','1',to_date('2000-11-02','yyyy-mm-dd'),'0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0007','Ã? An NhiÃªn','0',to_date('2001-01-02','yyyy-mm-dd'),'0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0008','Tr?n HoÃ ng UyÃªn Anh',0,'2002-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0009','Tr?n ThÃ nh',1,'1998-07-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0010','Tr?nh Giai NhÃ¢n',1,'2000-11-02','0917217036','ChÃ¢u ThÃ nh- An Giang');
+INSERT INTO HOCVIEN VALUES('HV0011','LÃª Thanh HoÃ ng',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0014','LÃª Thanh TÃ¢m',1,'2002-01-17','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0015','Hu?nh Ng?c Minh',1,'2007-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0016','Ngu HoÃ ng Gia B?o',1,'2005-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0017','Tr?nh Ng?c Gia B?o',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0018','BÃ¹i B?o Ng?c',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0019','LÃª Ng?c Kim KhÃ¡nh',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0020','LÃª Hu?nh My',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0021','Tr?n Ng?c Tuy?t',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0022','Tr?n Ng?c KhÃ¡nh Minh',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0023','Tr?n Ng?c Minh Anh',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0024','Tr?n LÃª Kim NgÃ¢n',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0025','LÃª Thanh TrÃ¢n',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0026','LÃª Thanh TÃ¢m',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0027','Tr?n Ng?c Tuy?n',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0028','Tr?n Hu?nh Gia Nhi',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0029','Tr?n LÃª Kim Thoa',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0030','BÃ¹i M?ng C?m',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0031','Tr?n M?ng Ãi?p',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0032','Tr?n Kim QuyÃªn',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0033','Tr?n LÃª Anh Thu',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0034','Tr?n Thanh Nghi',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0035','Tr?n BÃ¹i T? Nga',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0036','Tr?n Th? Kim CÃºc',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0037','Tr?n B?o Thy',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0038','Nguy?n Th? B?o Nghi',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0039','LÃª Thanh Ng?c',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0040','Tr?n Th? Nhu Ã',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0041','Tr?n Ng?c M? Ã',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0042','Tr?n Ng?c PhÃºc An',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0043','Tr?n Ng?c Minh Anh',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0044','Tr?n Ng?c PhÃºc An',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0047','Tr?n Ng?c BÃ­ch',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0048','Tr?n Thanh NhÃ¢n',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0049','Ã? T? UyÃªn',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0050','LÃª HÃ  My',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0051','LÃª Ng?c TrÃ¢n',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0052','Nguy?n Minh Thi',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0053','Tr?n Ng?c Anh',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0054','Tr?n Ng?c KhÃ¡nh Nhu',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0055','Tr?n Ng?c TiÃªn',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0056','Tr?n Ki?u TiÃªn',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0057','Tr?n H?u Phu?c',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0058','Tr?n HoÃ ng Khang',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0059','Tr?n LÃ¢m Tru?ng',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0060','Tr?n Tr?ng PhÃºc',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
 
-INSERT INTO HOCVIEN VALUES('HV0061','Tr?n Tr?ng Nghia',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0062','Tr?n Minh Nh?t',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0063','Lê Thanh An',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0064','Lê Kim Thy',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0065','Tr?n Huy?n Trang',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0066','Tr?n Minh Thu',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0067','Tr?n Thanh Ngân',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0068','Nguy?n Qu?c Ki?t',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0069','Lâm Th? Nhu',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0070','Lâm Minh Thu',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0071','Ð? Ng?c Nhu',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0072','Tr?n Tr?ng Phúc',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0073','Nguy?n Thanh Nhu',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0074','Lu Huy?n Trang',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0061','Tr?n Tr?ng Nghia',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0062','Tr?n Minh Nh?t',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0063','LÃª Thanh An',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0064','LÃª Kim Thy',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0065','Tr?n Huy?n Trang',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0066','Tr?n Minh Thu',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0067','Tr?n Thanh NgÃ¢n',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0068','Nguy?n Qu?c Ki?t',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0069','LÃ¢m Th? Nhu',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0070','LÃ¢m Minh Thu',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0071','Ã? Ng?c Nhu',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0072','Tr?n Tr?ng PhÃºc',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0073','Nguy?n Thanh Nhu',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0074','Lu Huy?n Trang',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
 --
-INSERT INTO HOCVIEN VALUES('HV0075','Lu Anh Thu',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0076','Ð? Hà My',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0077','Ð? Minh Khang',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0078','Ð? Hoàng Khang',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0079','Ð? Gia Khang',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0080','Ð? Bùi Minh Anh',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0081','Lê Tu?n Anh',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0082','Ð? Di?m Ly',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0083','Ð? Tu?ng Vy',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0084','Ð? Ng?c Chúc',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0085','Ð? Minh Nh?t',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0086','Ð? Minh Hoàng',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0087','Ð? Minh Trung',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0088','Ð? Minh Long',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0089','Võ Van Khánh Qu?c',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0090','Nguy?n Trung H?u',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0091','Ð? Lam Nhã',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0092','Hu?nh Minh Son',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0093','Hà Duy M?nh',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0094','Luu Hà Phu?c',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0095','Ð? Ng?c Ki?u Oanh',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0096','Ð? Gia Minh',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0097','Ð? Thanh Nhi',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0098','Lê T?n Ð?t',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0099','Lê Kim Ánh',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0100','Ð? Phuong Thùy',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0101','Lâm Th? Th?o Linh',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0102','Ð? Thanh Th?o',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0103','Ð? Ng?c Thùy',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0104','Ð? Ng?c Phuong',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0105','Ð? Th?ch Anh',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0106','Lu T?n Anh',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0107','Ð? Hà Giang',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0075','Lu Anh Thu',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0076','Ã? HÃ  My',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0077','Ã? Minh Khang',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0078','Ã? HoÃ ng Khang',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0079','Ã? Gia Khang',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0080','Ã? BÃ¹i Minh Anh',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0081','LÃª Tu?n Anh',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0082','Ã? Di?m Ly',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0083','Ã? Tu?ng Vy',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0084','Ã? Ng?c ChÃºc',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0085','Ã? Minh Nh?t',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0086','Ã? Minh HoÃ ng',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0087','Ã? Minh Trung',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0088','Ã? Minh Long',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0089','VÃµ Van KhÃ¡nh Qu?c',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0090','Nguy?n Trung H?u',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0091','Ã? Lam NhÃ£',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0092','Hu?nh Minh Son',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0093','HÃ  Duy M?nh',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0094','Luu HÃ  Phu?c',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0095','Ã? Ng?c Ki?u Oanh',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0096','Ã? Gia Minh',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0097','Ã? Thanh Nhi',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0098','LÃª T?n Ã?t',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0099','LÃª Kim Ãnh',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0100','Ã? Phuong ThÃ¹y',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0101','LÃ¢m Th? Th?o Linh',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0102','Ã? Thanh Th?o',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0103','Ã? Ng?c ThÃ¹y',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0104','Ã? Ng?c Phuong',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0105','Ã? Th?ch Anh',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0106','Lu T?n Anh',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0107','Ã? HÃ  Giang',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
 
-INSERT INTO HOCVIEN VALUES('HV0108','Ð? Tru?ng Giang',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0109','Ð? Hà My',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0110','Ð? Tu?n Phát',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0111','Ð? Tu?n Ki?t',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0108','Ã? Tru?ng Giang',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0109','Ã? HÃ  My',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0110','Ã? Tu?n PhÃ¡t',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0111','Ã? Tu?n Ki?t',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
 ---
-INSERT INTO HOCVIEN VALUES('HV0112','Ð? Hà Huy',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0113','Ð? Hà Ng?c',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0114','Ð? Th? C?m Giang',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0115','Lê B?o Trang',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0116','Lê Ki?u My',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0117','Ph?m Thanh Trúc',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0118','Ph?m Ng?c Hà',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0119','Truong Thanh Ng?c',0,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
-INSERT INTO HOCVIEN VALUES('HV0120','Ð? Ph?m Gia Huy',1,'2000-11-02','0917217036','Phong Ði?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0112','Ã? HÃ  Huy',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0113','Ã? HÃ  Ng?c',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0114','Ã? Th? C?m Giang',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0115','LÃª B?o Trang',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0116','LÃª Ki?u My',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0117','Ph?m Thanh TrÃºc',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0118','Ph?m Ng?c HÃ ',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0119','Truong Thanh Ng?c',0,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
+INSERT INTO HOCVIEN VALUES('HV0120','Ã? Ph?m Gia Huy',1,'2000-11-02','0917217036','Phong Ãi?n- C?n Tho');
 
 
 
@@ -309,8 +309,8 @@ insert into PHIEUTHU values('PT000070','HV0044','L003','2021-06-05',1450000);
 
 
 INSERT INTO MONHOC(MAMH,TENMH) VALUES ('MH01','Nghe');
-INSERT INTO MONHOC(MAMH,TENMH) VALUES ('MH02','Nói');
-INSERT INTO MONHOC(MAMH,TENMH) VALUES ('MH03','Ð?c');
+INSERT INTO MONHOC(MAMH,TENMH) VALUES ('MH02','NÃ³i');
+INSERT INTO MONHOC(MAMH,TENMH) VALUES ('MH03','Ã?c');
 INSERT INTO MONHOC(MAMH,TENMH) VALUES ('MH04','Vi?t');
 
 
@@ -338,8 +338,8 @@ INSERT INTO DIEM values  ('MH01','HV0006', 'L001', 5.5);
 INSERT INTO DIEM values  ('MH02','HV0006', 'L001', 6.5);
 INSERT INTO DIEM values  ('MH03','HV0006', 'L001', 4.5);
 INSERT INTO DIEM values  ('MH04','HV0006', 'L001', 3.5);
-
---1. Xem n?i dung c?a t?t c? các b?ng d? li?u b?ng l?nh SELECT
+end;
+--1. Xem n?i dung c?a t?t c? cÃ¡c b?ng d? li?u b?ng l?nh SELECT
 select * from khoahoc;
 select * from chuongtrinh;
 select * from loailop;
@@ -349,53 +349,88 @@ select * from phieuthu;
 select * from monhoc;
 select * from diem;
 
---2. Tìm thông tin v? các h?c viên nam
+--2. TÃ¬m thÃ´ng tin v? cÃ¡c h?c viÃªn nam
 select *
 from hocvien
 where gioitinh=1;
 
---3. Tìm thông tin v? các h?c viên có d?a ch? ? C?n Tho
+--3. TÃ¬m thÃ´ng tin v? cÃ¡c h?c viÃªn cÃ³ d?a ch? ? C?n Tho
 select *
 from hocvien
 where diachi like '%C?n Tho%';
 
 
---4. Tìm thông tin v? các l?p h?c c?a ‘khoá 1’
+--4. TÃ¬m thÃ´ng tin v? cÃ¡c l?p h?c c?a Â‘khoÃ¡ 1Â’
 select *
 from lop
 where makh='K001';
 
---5. Tìm mã và h? tên h?c viên có h?c ‘khoá 1’
+--5. TÃ¬m mÃ£ vÃ  h? tÃªn h?c viÃªn cÃ³ h?c Â‘khoÃ¡ 1Â’
 select hv.mahv,hv.tenhv
 from hocvien hv
 join phieuthu p on hv.mahv = p.mahv
 join lop l on l.malop = p.malop
 join khoahoc k on l.makh = k.makh
-where k.tenkh = 'Khóa 1';
+where k.tenkh = 'KhÃ³a 1';
 
---6. Tìm h? tên các h?c viên có bao g?m ch? ‘Ð?’
+--6. TÃ¬m h? tÃªn cÃ¡c h?c viÃªn cÃ³ bao g?m ch? Â‘Ã?Â’
 select tenhv
 from hocvien
-where tenhv like '%Ð?%';
+where tenhv like '%Ã?%';
 
---7. Tìm thông tin các h?c viên sinh nam 2000 ?
+--7. TÃ¬m thÃ´ng tin cÃ¡c h?c viÃªn sinh nam 2000 ?
 select *
 from hocvien
 where extract( year from ngaysinh ) = 2000;
 
---8. Tìm thông tin c?a các h?c viên sinh tháng 12 nam 2001 ?
+--8. TÃ¬m thÃ´ng tin c?a cÃ¡c h?c viÃªn sinh thÃ¡ng 12 nam 2001 ?
 select *
 from hocvien
 where extract( month from ngaysinh ) = 12 and extract( year from ngaysinh ) = 2001;
 
---9. Tìm thông tin các h?c viên sinh t? nam 1998 d?n 2000
+--9. TÃ¬m thÃ´ng tin cÃ¡c h?c viÃªn sinh t? nam 1998 d?n 2000
 select *
 from hocvien
 where extract( year from ngaysinh ) >= 1998 and extract( year from ngaysinh ) <= 2000 ;
 
---10. Tìm thông tin các phi?u thu du?c th?c hi?n t? ngày 5 d?n ngày 10 tháng 6 nam 2021 ?
+--10. TÃ¬m thÃ´ng tin cÃ¡c phi?u thu du?c th?c hi?n t? ngÃ y 5 d?n ngÃ y 10 thÃ¡ng 6 nam 2021 ?
 select *
 from phieuthu
 where extract( year from ngaylapphieu ) = 2021 and extract( month from ngaylapphieu ) = 6 and  extract( day from ngaylapphieu ) >= 5 and extract( day from ngaylapphieu ) <= 10;
 
---11. In danh sách các h?c viên l?p ‘L?p 1’ Ti?ng anh can b?n
+--11. In danh sÃ¡ch cÃ¡c há»c viÃªn lá»›p â€˜Lá»›p 1â€™ Tiáº¿ng anh cÄƒn báº£n
+select hv.*
+from hocvien hv
+join phieuthu p on hv.mahv = p.mahv
+join lop l on p.malop = l.malop
+join loailop ll on l.maloai = ll.maloai
+where tenlop = 'L?p 1' and tenloai = 'Ti?ng Anh can b?n';
+
+--12. In danh sÃ¡ch cÃ¡c lá»›p thuá»™c chÆ°Æ¡ng trÃ¬nh â€˜Tiáº¿ng anh tá»•ng quÃ¡tâ€™
+select l.*
+from lop l
+join loailop ll on ll.maloai = l.maloai
+join chuongtrinh ct on ct.mact = ll.mact
+where tenct = 'Ti?ng Anh T?ng QuÃ¡t';
+
+--13. Liá»‡t kÃª thÃ´ng tin táº¥t cáº£ cÃ¡c phiáº¿u thu cá»§a â€˜lá»›p 1â€™ Tiáº¿ng anh A1?
+select p.*
+from phieuthu p
+join lop l on l.malop = p.malop
+join loailop ll on ll.maloai = l.maloai
+where tenlop = 'L?p 1' and tenloai = 'Ti?ng Anh can b?n';
+
+--14. TÃ¬m há» tÃªn há»c viÃªn, tÃªn mÃ´n vÃ  Ä‘iá»ƒm thi cÃ¡c mÃ´n cá»§a cÃ¡c há»c viÃªn há»c â€˜khoÃ¡ 1â€™
+select hv.tenhv, m.tenmh, d.diem
+from hocvien hv
+join diem d on d.mahv = hv.mahv
+join monhoc m on m.mamh = d.mamh
+join lop l on l.malop = d.malop
+join khoahoc k on k.makh = l.makh
+where k.tenkh = 'KhÃ³a 1';
+
+--15. CÃ³ táº¥t cáº£ bao nhiÃªu há»c viÃªn ?
+select count(*) as "Tá»•ng sá»‘ há»c viÃªn"
+from HOCVIEN;
+
+--16. â€˜Lá»›p 1â€™ Tiáº¿ng anh cÄƒn báº£n cÃ³ bao nhiÃªu há»c viÃªn ?
