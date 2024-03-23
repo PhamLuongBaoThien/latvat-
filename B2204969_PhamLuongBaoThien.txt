@@ -434,3 +434,35 @@ select count(*) as "Tổng số học viên"
 from HOCVIEN;
 
 --16. ‘Lớp 1’ Tiếng anh căn bản có bao nhiêu học viên ?
+select count(*) as "‘Lớp 1’ Tiếng anh căn bản có bao nhiêu học viên"
+from hocvien hv
+join phieuthu p on p.mahv = hv.mahv
+join lop l on l.malop = p.malop
+join loailop ll on ll.maloai = l.maloai
+where l.tenlop = 'L?p 1' and ll.tenloai = 'Ti?ng Anh can b?n';
+
+--17. Tính tổng số tiền đã thu được của ‘lớp 2’ Tiếng anh căn bản
+select sum(thanhtien) as "Tổng số tiền đã thu được của 'lớp 2' Tiếng anh căn bản" 
+from phieuthu p
+join lop l on l.malop = p.malop
+join loailop ll on ll.maloai = l.maloai
+where l.tenlop = 'L?p 2' and ll.tenloai = 'Ti?ng Anh can b?n';
+
+--18. Tính tổng số tiền đã thu được của ‘khoá 1’ ?
+select sum(thanhtien) as "Tổng số tiền đã thu được của ‘khoá 1’"
+from phieuthu p
+join lop l on l.malop = p.malop
+join khoahoc k on k.makh = l.makh
+where k.tenkh = 'Khóa 1';
+
+--19. Tính điểm trung bình của học viên 'Đỗ Gia Bảo', sinh ngày 02/12/2001 học ‘lớp 1’ Tiếng anh căn bản ?
+select avg(diem) as "Điểm trung bình của học viên 'Đỗ Gia Bảo', sinh ngày 02/12/2001 học ‘lớp 1’ Tiếng anh căn bản"
+from diem d
+join hocvien hv on hv.mahv = d.mahv
+join lop l on l.malop = d.malop
+join loailop ll on ll.maloai = l.maloai
+where hv.tenhv ='Ð? Gia B?o' and hv.ngaysinh = '2001-12-02' and l.tenlop = 'L?p 1' and ll.tenloai ='Ti?ng Anh can b?n';
+
+--20. Tìm điểm lớn nhất ?
+select max(diem) as " Điểm lớn nhất"
+from diem d;
