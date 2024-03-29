@@ -250,4 +250,13 @@ where extract( year from ngaymuon) = 2007
 group by d.ho, d.ten, tp.NT, tp.tua, tp.tacgia;
 
 -- 15) Tính số tác phẩm có trong thư viện. 
+select count(*) as "Số tác phẩm có trong thư viện"
+from tacpham;
 
+--16) Tựa của tác phẩm mà có ít nhất hai quyển sách. 
+select tp.nt, tp.tua, count(*)
+from tacpham tp, sach s
+where tp.nt = s.nt
+group by tp.nt, tp.tua
+having count(*)>=2
+ORDER BY tp.nt ASC;
