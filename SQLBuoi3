@@ -206,10 +206,48 @@ join muon m on m.nd = d.nd
 join sach s on s.ns = m.ns
 join tacpham tp on tp.nt = s.nt
 where tua = 'Les Fleurs du mal';
+
 --11) Tìm các tựa sách, tên độc giả của các độc giả trả sách quá thời hạn cho phép
 select tp.tua, d.ten
 from tacpham tp
 join sach s on s.nt = tp.nt
 join muon m on m.ns = s.ns
 join docgia d on d.nd = m.nd
-where m.ngaytra > m.hantra or m.hantra = null; 
+where m.ngaytra > m.hantra;
+
+--12) Tìm các tựa sách, tên độc giả của các độc giả trả sách trước thời hạn
+select tp.tua, d.ten
+from tacpham tp
+join sach s on s.nt = tp.nt
+join muon m on m.ns = s.ns
+join docgia d on d.nd = m.nd
+where m.ngaytra < m.hantra;
+
+--13) Tên độc giả đã mượn tác phẩm của 'Victor Hugo'
+select d.ten
+from docgia d
+join muon m on m.nd = d.nd
+join sach s on s.ns = m.ns
+join tacpham tp on tp.nt = s.nt
+where  tacgia = 'Victor Hugo'
+group by ten;
+
+--14) Tên độc giả và các tác phẩm đã được mượn năm 2007
+-- cách 1
+select distinct d.ho, d.ten, tp.*
+from docgia d
+join muon m on m.nd = d.nd
+join sach s on s.ns = s.ns
+join tacpham tp on tp.nt = s.nt
+where extract( year from ngaymuon) = 2007;
+-- cách 2
+select d.ho, d.ten, tp.*
+from docgia d
+join muon m on m.nd = d.nd
+join sach s on s.ns = s.ns
+join tacpham tp on tp.nt = s.nt
+where extract( year from ngaymuon) = 2007
+group by d.ho, d.ten, tp.NT, tp.tua, tp.tacgia;
+
+-- 15) Tính số tác phẩm có trong thư viện. 
+
