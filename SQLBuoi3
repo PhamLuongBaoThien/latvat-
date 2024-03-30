@@ -260,3 +260,16 @@ where tp.nt = s.nt
 group by tp.nt, tp.tua
 having count(*)>=2
 ORDER BY tp.nt ASC;
+
+--17) Tính Số tác phẩm của mỗi tác giả.
+select tacgia, count(*) as "Số tác phẩm của tác giả"
+from tacpham
+group by tacgia;
+
+--18) Tính Số sách của mỗi tác phẩm.
+select tp.*, count(*) as "Số sách của tác phẩm."
+from tacpham tp, sach s
+where tp.nt = s.nt
+group by tp.nt, tp.tua, tp.tacgia;
+
+
