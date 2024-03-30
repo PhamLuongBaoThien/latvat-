@@ -300,3 +300,96 @@ group by s.nt, s.nxb
 having count(*) = (
     select max(count(*)) from sach group by nt
 );
+
+--23) Tính Số tác giả có ít nhất hai tác phẩm 
+select count(*) as "So tac gia co it nhat hai tac pham"
+from (
+    select tacgia, count(*)
+    from tacpham
+    group by tacgia
+    having count(*) >= 2
+);
+
+--24) Tìm tựa tác phẩm có nhiều người mượn nhất
+select tp.tua, count(*) as "So lan muon"
+from tacpham tp
+join sach s on s.nt = tp.nt
+join muon m on m.ns = s.ns
+group by tp.tua
+having count(*) = (
+    select max(count(*))
+    from tacpham tp
+    join sach s on s.nt = tp.nt
+    join muon m on m.ns = s.ns
+    group by tp.nt
+ );
+
+--25) Tìm tựa tác phẩm có ít người mượn nhất
+select tp.tua, count(*) as "So lan muon"
+from tacpham tp
+join sach s on s.nt = tp.nt
+join muon m on m.ns = s.ns
+group by tp.tua
+having count(*) = (
+    select min(count(*))
+    from tacpham tp
+    join sach s on s.nt = tp.nt
+    join muon m on m.ns = s.ns
+    group by tp.nt
+ );
+
+--26) Tìm độc giả mượn nhiều tác phẩm nhất
+select d.ho, d.ten, count(*)
+from docgia d
+join muon m on m.nd = d.nd
+group by d.ho, d.ten
+having count(*) = (
+    select max(count(*))
+    from docgia d
+    join muon m on m.nd = d.nd
+    group by d.nd
+);
+
+--27) Tìm tên độc giả mượn ít tác phẩm nhất
+select d.ho, d.ten, count(*)
+from docgia d
+join muon m on m.nd = d.nd
+group by d.ho, d.ten
+having count(*) = (
+    select min(count(*))
+    from docgia d
+    join muon m on m.nd = d.nd
+    group by d.nd
+);
+
+--28) Tìm tên tác phẩm có ít nhất một quyển sách không ai mượn
+select tp.tua
+from tacpham tp
+join sach s on tp.nt = s.nt
+left join muon m on s.ns = m.ns
+where ngaymuon is null;
+
+--29) Tìm tên tác phẩm có tất cả các quyển sách đều được mượn
+select tua
+from tacpham 
+where tua not in (
+    select tua
+    from tacpham t
+    join sach s on t.nt = s.nt
+    left join muon m on s.ns = m.ns
+    where ngaymuon is null
+);
+
+--30) Tìm họ tên độc giả chưa mượn quyển sách nào
+select *
+from docgia d
+left join muon m on d.nd = m.nd
+where ngaymuon is null;
+
+--31) Tìm thông tin về nhà suất bản của quyển sách mà chưa được ai mượn
+select s.nxb, tp.tua
+from sach s
+join tacpham tp on tp.nt = s.nt
+left join muon m on s.ns = m.ns
+where ngaymuon is null;
+
