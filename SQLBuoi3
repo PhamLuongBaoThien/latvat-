@@ -157,6 +157,11 @@ SELECT * FROM docgia;
 SELECT * FROM sach;
 SELECT * FROM muon;
 
+--2) V? s? ?? li�n th�ng 
+--TACPHAM k?t n?i v?i SACH qua NT
+--DOCGIA k?t n?i v?i MUON qua ND
+--SACH k?t n?i v?i MUON qua NS
+
 --3) Các tác phẩm (NT, tựa) của tác giả 'Guy de Maupassant'.
 SELECT nt, tua
 FROM tacpham
@@ -176,7 +181,7 @@ where tp.tua like '%Fleur%';
 --6) Tìm tên các tác phẩm bắt đầu bằng 'Le'
 select tua
 from tacpham
-where tua like '%Le%';
+where tua like 'Le%';
 
 --7) Tìm tên các độc giả có mượn sách trong trong khoảng thời gian từ ngày 15/9/2007 đến 20/09/2007
 select d.ten 
@@ -221,40 +226,31 @@ from tacpham tp
 join sach s on s.nt = tp.nt
 join muon m on m.ns = s.ns
 join docgia d on d.nd = m.nd
-where m.ngaytra < m.hantra;
+where m.ngaytra <= m.hantra;
 
 --13) Tên độc giả đã mượn tác phẩm của 'Victor Hugo'
-select d.ten
+select d.ho ,d.ten
 from docgia d
 join muon m on m.nd = d.nd
 join sach s on s.ns = m.ns
 join tacpham tp on tp.nt = s.nt
 where  tacgia = 'Victor Hugo'
-group by ten;
+group by ho, ten;
 
 --14) Tên độc giả và các tác phẩm đã được mượn năm 2007
--- cách 1
-select distinct d.ho, d.ten, tp.*
+select d.ho, d.ten, tp.tua as " Ten tac pham da duoc muon nam 2007"
 from docgia d
 join muon m on m.nd = d.nd
-join sach s on s.ns = s.ns
+join sach s on s.ns = m.ns
 join tacpham tp on tp.nt = s.nt
 where extract( year from ngaymuon) = 2007;
--- cách 2
-select d.ho, d.ten, tp.*
-from docgia d
-join muon m on m.nd = d.nd
-join sach s on s.ns = s.ns
-join tacpham tp on tp.nt = s.nt
-where extract( year from ngaymuon) = 2007
-group by d.ho, d.ten, tp.NT, tp.tua, tp.tacgia;
 
 -- 15) Tính số tác phẩm có trong thư viện. 
-select count(*) as "Số tác phẩm có trong thư viện"
+select count(*) as "So tac pham co trong thu vien"
 from tacpham;
 
 --16) Tựa của tác phẩm mà có ít nhất hai quyển sách. 
-select tp.nt, tp.tua, count(*)
+select tp.nt, tp.tua, count(*) as "So quyen sach"
 from tacpham tp, sach s
 where tp.nt = s.nt
 group by tp.nt, tp.tua
@@ -262,14 +258,45 @@ having count(*)>=2
 ORDER BY tp.nt ASC;
 
 --17) Tính Số tác phẩm của mỗi tác giả.
-select tacgia, count(*) as "Số tác phẩm của tác giả"
+select tacgia, count(*) as "So tac pham cua tac gia"
 from tacpham
 group by tacgia;
 
 --18) Tính Số sách của mỗi tác phẩm.
-select tp.*, count(*) as "Số sách của tác phẩm."
+select tp.tua, count(*) as "So sach cua tac pham."
 from tacpham tp, sach s
 where tp.nt = s.nt
 group by tp.nt, tp.tua, tp.tacgia;
 
+--19) Tìm số lần mượn sách của mỗi độc giả theo năm
+select d.nd, d.ho, d.ten, extract(year from m.ngaymuon) as "Nam muon", count(*) as "So lan muon"
+from docgia d
+join muon m on m.nd = d.nd
+group by d.nd, d.ho, d.ten, EXTRACT(year from m.ngaymuon)
+order by nd;
 
+--20) Tìm tên tác phẩm có ít nhất 3 sách
+select tp.nt, tp.tua, count(*) as "So quyen sach"
+from tacpham tp, sach s
+where tp.nt = s.nt
+group by tp.nt, tp.tua
+having count(*)>=3
+ORDER BY tp.nt ASC;
+
+--21) Tìm tên tác phẩm có nhiều sách nhất
+select tp.nt, tp.tua, count(*) as "So quyen sach"
+from tacpham tp
+join sach s on s.nt = tp.nt
+group by tp.nt, tp.tua
+having count(*) = (
+    select max(count(*)) from sach group by nt
+ );
+
+--22) Tên nhà xuất bản xuất bản nhiều sách nhất 
+select s.nt, s.nxb, count(*) as "So sach"
+from sach s
+join tacpham tp on tp.nt = s.nt
+group by s.nt, s.nxb
+having count(*) = (
+    select max(count(*)) from sach group by nt
+);
